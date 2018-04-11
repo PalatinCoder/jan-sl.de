@@ -1,0 +1,107 @@
+doctype html
+html(lang='de')
+  head
+    meta(charset='utf-8')
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    meta(name="author" content="Jan Syring-Lingenfelder")
+    meta(name="description" content="Jan Syring-Lingenfelder - private Homepage - Webdesign, Software, IT")
+    title jan syring-lingenfelder .de
+    link(rel='stylesheet', href='/main.css')
+    script(src='/vendor.js')
+    script(src='/app.js')
+  body
+
+    mixin externallink(href)
+      a(href=href target='_blank' rel='noopener')&attributes(attributes)
+        block
+
+    .banner-wrapper
+      header#banner
+        img(src='/images/me.jpg', alt='Profilbild').in-flight
+        h1.in-flight Jan Syring-Lingenfelder
+        h2.in-flight powering computers since 1996
+      i.fas.fa-chevron-circle-down.in-flight
+
+    main
+          
+      h1.parallax#me Über Mich
+      section
+        .two-column
+          p.in-flight Naja, nicht ganz seit 1996, denn da kam ich gerade erst auf die Welt. Sagen wir seit Anfang der 2000er, da war ich im Grundschulalter und begann mich für alles zu interessieren, was mit Computern zu tun hat. Durch Praktika, die Schule, aber auch hauptsächlich durch Neugier und learning-by-doing viel Wissen rund um Webdesign, Software Entwicklung und IT gesammelt. Inzwischen habe ich das ganze studiert, habe einen Abschluss in Informationstechnik von der #[+externallink('https://karlsruhe.dhbw.de') DHBW Karlsruhe] und beschäftige mich auch beruflich mit IT, als Systemingenieur bei einem Dienstleister für Banken-IT in Karlsruhe.
+          p.in-flight Aus Spaß an der Freude (und am Programmieren) habe ich diese Webseite, nutzen möchte ich sie um mich und einige ausgewählte meiner Projekte vorzustellen.
+            br
+            br
+            | Ein leben außerhalb der IT habe ich übrigens auch, dort wohne ich im Weindorf #[+externallink('https://www.duttweiler.de') Duttweiler], halte mich über Sommer gerne im dortigen #[+externallink('https://www.schwimmbad-duttweiler.de/') Schwimmbad] auf und spiele auch hin und wieder mal #[+externallink('https://www.vfl-duttweiler.de/vfl-tt.htm') Tischtennis].
+
+            
+      h1.parallax#websites Webdesign
+      section
+        p.in-flight Das Basteln von Webseiten war mein Einstieg in die IT-Welt. Das Interesse daran hat mein #[externallink('https://www.g-sl.de') Vater] geweckt, der sich auch damit beschäftigt und dem ich anfangs viel über die Schulter geschaut habe. Angefangen mit dem Ausprobieren in WYSIWYG Editoren und "rumfuhrwerken" im Code den sie generieren, habe ich mein Wissen in den üblichen Webtechnologien stetig weiterentwickelt und mittlerweile doch recht gut gefestigt. Und wie das halt so ist, wenn man etwas gut kann, dann darf man das auch für andere Leute anwenden ;-)
+
+        .two-column
+          figure.panel.in-flight
+            img(src='/images/products/duttweiler.jpg', alt="Screenshot")
+            figcaption
+              h2 Duttweiler.de
+              p Duttweiler.de ist ein Projekt meines Vaters, welches er schon seit Ende der 90er-Jahre betreibt. Er stellt dort Nachrichten und Informationen rund um unser Heimatdorf bereit. Dies erfolgte rein in handgeschriebenem HTML, was natürlich die Pflege und Erstellung neuer Inhalte nicht gerade vereinfacht. Aus diesem Grund habe ich die Seite in ein Content Management System implementiert, welches zum Jahreswechsel 2015/2016 
+                +externallink('https://www.duttweiler.de/a-bis-z/c/chronik/2016/quantensprung-fur-duttweiler-de.html') in den Livebetrieb ging.
+              +externallink('https://www.duttweiler.de') Ansehen
+          figure.panel.in-flight
+            img(src="/images/products/sl-wein.jpg", alt="Screenshot")
+            figcaption
+              h2 Weingut Syring-Lingenfelder
+              p Das Weingut Syring-Lingenfelder war schon lange im Internet vertreten, jedoch ist die Seite mit der Zeit etwas eingestaubt und wurde nur langsam aktualisiert. Im Sommer 2015 bekam sie daher von mir ein neues, frisches und auf aktuellen Webtechniken basierendes Design, sowie ein CMS, wodurch die Inhalte nun einfacher gepflegt werden können.
+              +externallink('https://www.sl-wein.de') Ansehen
+                    
+      h1.parallax#software Apps &amp; Software
+      section
+        p.in-flight Wenn Webseiten der Einstieg waren, waren (Windows-) Programme die nächsten Schritte hin zum "richtigen" Programmieren in verschiedenen Sprachen. Entwickelt habe ich dabei gerne das, was ich gerade selbst gebraucht habe - kleine Shellskripte für den Alltag, eine CTI Anwendung, alles mögliche eben. Das ganze auch in diversen Sprachen, je nach dem welche für ein konkretes Projekt eben sinnvoll ist. Manchmal kommt aber auch etwas wirklich sinnvolles dabei raus:
+        .two-column
+          figure.panel.in-flight
+            img(src="/images/products/duttweilerapp.jpg", alt="Titelbild")
+            figcaption
+              h2 DuttweilerApp
+              p 
+                | Die DuttweilerApp für Android bietet Nachrichten und den Veranstaltungskalender von duttweiler.de für das Smartphone optimiert. Die Inhalte werden dabei von der Webseite via API übernommen - praktisch, dass die auch von mir geschrieben wurde.
+                br
+                | Zusätzlich erweitert die App das reine Anzeigen der Daten um nützliche Funktionen wie, wie z.B. Veranstaltugen zu teilen oder direkt in den eigenen Kalender zu übernehmen. Am nützlichsten ist wohl die Möglichkeit, sich via Push-Nachrichten über neue Nachriten informieren zu lassen und so immer auf dem laufenden zu bleiben.
+              +externallink('https://play.google.com/store/apps/details?id=de.jan_sl.duttweiler.app&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1')
+                | Installieren
+                br
+                img(src="https://play.google.com/intl/de_de/badges/images/generic/de_badge_web_generic.png", alt="Jetzt bei Google Play" width="200")
+          figure.panel.in-flight
+            img(src="/images/products/dhbw-rapla.jpg", alt="Titelbild")
+            figcaption
+              h2 DHBW Rapla Action für Google
+              p Sprachsteuerung und Smart Home sind in aller Munde, und auch bei mir ist ein Google Home eingezogen. Welche Frage stellt sich der geneigte Programmierer wohl als erstes? Einen passenden Use-Case hatte ich auch recht schnell gefunden. Da ich mir meinen Vorlesungsplan absolut nicht merken konnte (die App entstand während meines Studiums), soll das doch mein Assistent für mich übernehmen. Da unsere Vorlesungspläne praktischerweise als iCal Dateien verfügbar sind, war auch die Umsetzung der Serverseite relativ simpel. Das größere Problem war, das Voice UI entsprechend fehlertolerant zu gestalten und den Nutzer gut zu führen (das wird von Google übrigens manuell getestet). Nach einigem hin und her wurde die App dann akzeptiert und kann jetzt von jedem genutzt werden. Wer möchte, kann sich auch den #[+externallink('https://github.com/PalatinCoder/DHBWRapla-action') Sourcecode auf GitHub] ansehen.
+              +externallink('https://assistant.google.com/services/a/uid/0000006d85967ba3?hl=de') Ausprobieren
+
+
+    footer(itemscope,itemtype="https://schema.org/Person")
+      img(src="images/me.jpg", alt="Jan Syring-Lingenfelder", style="display:none", itemprop="image")
+      h3
+        span(itemprop="givenName") Jan 
+        span(itemprop="familyName") Syring-Lingenfelder
+      .two-column
+        div(itemprop="address", itemscope, itemtype="https://schema.org/PostalAddress")
+          span(itemprop="streetAddress") Altdorfer Straße 5
+          br
+          span(itemprop="postalCode") 67435 
+          span(itemprop="addressLocality") Neustadt
+        address
+          a(href="mailto:mail@jan-sl.de")
+            i.fas.fa-envelope
+            span(itemprop="email") mail@jan-sl.de
+          br
+          link(href="https://www.jan-sl.de",itemprop="url")
+          +externallink('https://github.com/PalatinCoder')(itemprop="sameAs")
+            i.fab.fa-github
+            | PalatinCoder
+          br
+          +externallink('https://twitter.com/@sljan96')(itemprop="sameAs")
+            i.fab.fa-twitter
+            | @sljan96
+          br
+          +externallink('https://t.me/syy96')
+            i.fab.fa-telegram-plane
+            | @syy96

@@ -1,0 +1,72 @@
+=landing-element-heading
+  transform: translateX(200px)
+  opacity: 0
+  filter: blur(2px)
+  
+@keyframes chevron-bounce
+    0%
+      transform: translateY(0)
+    40%
+      transform: translateY(-8px)
+    55%
+      transform: translateY(0)
+    65%
+      transform: translateY(-3px)
+    90%
+      transform: translateY(0)
+
+.banner-wrapper
+  background-color: white
+  min-height: 100%
+  position: relative
+  i.fas.fa-chevron-circle-down
+    position: absolute
+    bottom: 1em
+    left: 50%
+    margin-left: -16px
+    font-size: 32px
+    animation: chevron-bounce 0.5s linear 3.5s 2
+    +landing-element-more-delayed
+    +landing-element
+      opacity: 0
+
+header#banner
+  max-width: $layout-width
+  margin: 0 auto
+  padding: 4%
+  +screen-large
+    padding: 10% 0
+  text-align: left
+  min-height: 100%
+  overflow: hidden
+  img
+    border-radius: 100%
+    overflow: hidden
+    width: 100px
+    +screen-medium
+      width: 150px
+    +screen-large
+      width: 200px
+    border: 2px solid $theme-border-color
+    +landing-element
+      transform: translateY(-50px)
+      opacity: 0
+    &.fixed
+      position: fixed
+      top: 0
+      transition: none
+      transform: scale(0.5)
+
+  h1
+    +screen-medium
+      font-size: 3.5em
+    padding-bottom: 1em
+    border-bottom: 2px solid $theme-accent-color
+    line-height: 120%
+    +landing-element-delayed
+    +landing-element
+      +landing-element-heading
+  h2
+    +landing-element-delayed
+    +landing-element
+      +landing-element-heading

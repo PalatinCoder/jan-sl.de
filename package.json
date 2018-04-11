@@ -1,0 +1,29 @@
+{
+  "name": "jan-sl-de-website",
+  "author": "Jan Syring-Lingenfelder",
+  "private": "true",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "brunch watch --server",
+    "prod": "npm run clean && brunch build --production",
+    "clean": "@powershell -NoProfile -Command Remove-Item .\\public\\* -Recurse -Force",
+    "deploy:staging": "npm run prod && WinSCP.com /command \"open vps/proxy/webmaster-jan\" \"synchronize remote D:/Dev/websites/jan/2018/public /staging.jan-sl.de -delete\" \"exit\"",
+    "deploy:production": "npm run prod && WinSCP.com /command \"open vps/proxy/jan\" \"synchronize remote D:/Dev/websites/jan/2018/public /var/www/html/jan-sl.de -delete\" \"exit\""
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free-webfonts": "^1.0.4",
+    "jquery": "^3.3.1"
+  },
+  "devDependencies": {
+    "auto-reload-brunch": "^2.7.1",
+    "babel-brunch": "~6.0.0",
+    "babel-preset-es2015": "~6.3.13",
+    "brunch": "^2.4.0",
+    "copycat-brunch": "^1.1.0",
+    "css-brunch": "^2.0.0",
+    "javascript-brunch": "^2.0.0",
+    "pugjs-brunch": "^2.8.5",
+    "sass-brunch": "github:brunch/sass-brunch#master",
+    "uglify-js-brunch": "^2.0.0"
+  }
+}

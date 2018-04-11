@@ -1,0 +1,44 @@
+*
+  box-sizing: border-box
+
+html, body
+  height: 100%
+  margin: 0
+  padding: 0
+body
+  overflow-x: hidden
+
+main
+  background: white
+  padding-bottom: 20px
+
+section
+  p
+    padding: 4%
+    +screen-large
+      padding: 0
+  > p
+    +landing-element
+      transform: translateY(50px)
+      opacity: 0
+  
+  max-width: $layout-width
+  margin: 0 auto
+
+.two-column
+  display: flex
+  flex-flow: row wrap
+  justify-content: space-between
+  > *
+    flex: 0 1 100%
+    +screen-medium
+      flex: 0 1 48%
+    
+    &:nth-child(even)
+      +landing-element
+        transform: translateX(100px)
+        opacity: 0
+    &:nth-child(odd)
+      +landing-element
+        transform: translateX(-100px)
+        opacity: 0

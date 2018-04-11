@@ -1,0 +1,35 @@
+footer
+  position: fixed
+  bottom: 0
+  width: 100%
+  height: $footer-height
+  padding: 50px 4%
+  background-color: $theme-accent-color
+  color: $font-color-accent
+  z-index: -100
+  text-align: left
+  h3
+    max-width: $layout-width
+    margin: 1em auto
+  a
+    color: $font-color-accent
+  address
+    +screen-large
+      text-align: right
+
+    i.fab, i.fas
+      margin-right: 0.75em
+      font-size: larger
+      +screen-large
+        margin-right: 0
+        margin-left: 0.75em
+        float: right
+        line-height: inherit
+
+  .two-column
+    max-width: $layout-width
+    margin: 0 auto
+    
+main
+  box-shadow: 0 -15px 40px 20px rgba(0, 0, 0, 0.8)
+  margin-bottom: $footer-height
