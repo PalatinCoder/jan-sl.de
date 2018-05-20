@@ -1,3 +1,12 @@
+# [jan-sl.de](https://www.jan-sl.de)
+
+This repository contains the code for my personal homepage. It is built with pugjs and sass.
+
+As build tool is use brunch and a skeleton which includes the mentioned components.
+See below the readme of the skeleton.
+
+Note: although I do publish the code on GitHub, this code is not open source! Feel free to look through and get inspired for your own projects, but don't leech ;)
+
 # Brunch + Babel/ES6 + Sass + Pug
 
 This is a modern JS skeleton for [Brunch](http://brunch.io).
