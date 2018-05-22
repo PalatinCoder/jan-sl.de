@@ -2,7 +2,7 @@
   "name": "jan-sl-de-website",
   "author": "Jan Syring-Lingenfelder",
   "private": "true",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "scripts": {
     "start": "brunch watch --server",
     "prod": "npm run clean && brunch build --production",
