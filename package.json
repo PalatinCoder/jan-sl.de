@@ -7,8 +7,8 @@
     "start": "brunch watch --server",
     "prod": "npm run clean && brunch build --production",
     "clean": "@powershell -NoProfile -Command Remove-Item .\\public\\* -Recurse -Force",
-    "deploy:staging": "npm run prod && WinSCP.com /command \"open vps/proxy/webmaster-jan\" \"synchronize remote D:/Dev/websites/jan/2018/public /staging.jan-sl.de -delete\" \"exit\"",
-    "deploy:production": "npm run prod && WinSCP.com /command \"open vps/proxy/jan\" \"synchronize remote D:/Dev/websites/jan/2018/public /var/www/html/jan-sl.de -delete\" \"exit\""
+    "deploy:staging": "npm run prod && WinSCP.com /command \"open vps/webmaster-jan\" \"synchronize remote D:/Dev/websites/jan/2018/public /staging.jan-sl.de -delete\" \"exit\"",
+    "deploy:production": "npm run prod && WinSCP.com /command \"open vps/jan\" \"synchronize remote D:/Dev/websites/jan/2018/public /var/www/html/jan-sl.de -delete\" \"exit\""
   },
   "dependencies": {
     "@fortawesome/fontawesome-free-webfonts": "^1.0.4",
