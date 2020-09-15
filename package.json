@@ -11,7 +11,7 @@
     "deploy:production": "npm run prod && WinSCP.com /command \"open vps/jan\" \"synchronize remote D:/Dev/websites/jan/2018/public /var/www/html/jan-sl.de -delete\" \"exit\""
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free-webfonts": "^1.0.4",
+    "fork-awesome": "^1.1.7",
     "jquery": "^3.3.1"
   },
   "devDependencies": {

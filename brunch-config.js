@@ -27,11 +27,11 @@ module.exports = {
     sass: {
       mode: 'native',
       options: {
-        includePaths: ["node_modules/@fortawesome/fontawesome-free-webfonts/scss"]
+        includePaths: ["node_modules/fork-awesome/scss"]
       }
     },
     copycat: {
-      "fonts": ["node_modules/@fortawesome/fontawesome-free-webfonts/webfonts"],
+      "fonts": ["node_modules/fork-awesome/fonts"],
       verbose: true,
       onlyChanged: true
     },
