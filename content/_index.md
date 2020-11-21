@@ -14,5 +14,4 @@ Ein Leben außerhalb der IT habe ich übrigens auch, dort wohne ich im Weindorf 
 Das Basteln von Webseiten war mein Einstieg in die IT-Welt.
 Das Interesse daran hat mein [Vater](https://www.g-sl.de) geweckt, der sich auch damit beschäftigt und dem ich anfangs viel über die Schulter geschaut habe.
 Angefangen mit dem Ausprobieren in WYSIWYG Editoren und "rumfuhrwerken" im Code den sie generieren, habe ich mein Wissen in den üblichen Webtechnologien stetig weiterentwickelt und mittlerweile doch recht gut gefestigt.
-Und wie das halt so ist, wenn man etwas gut kann, dann darf man das auch für andere Leute anwenden 😉
-
+Und wie das halt so ist, wenn man etwas gut kann, dann darf man das auch für andere Leute anwenden :wink:
