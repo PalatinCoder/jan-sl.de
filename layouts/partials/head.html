@@ -3,6 +3,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="author" content="Jan Syring-Lingenfelder" />
 	<meta name="description" content="Jan Syring-Lingenfelder - private Homepage - Webdesign, Software, IT" />
+	{{ $css := resources.Get "root.sass" | resources.ToCSS (dict "outputStyle" "compressed") | fingerprint }}
+	<link rel="stylesheet" href="{{ $css.Permalink }}">
 	{{ $title := print .Site.Title " | " .Title }}
 	{{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
 	<title>{{ $title }}</title>
