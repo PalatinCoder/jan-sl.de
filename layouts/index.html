@@ -17,8 +17,10 @@
 	</div>
 </section>
 
-<main>
-	{{ .Content }}
+<main class="section">
+	<div class="container">
+		{{ .Content }}
+	</div>
 </main>
 
 {{ $bouncychevron := resources.Get "components/bouncy-chevron.js" }}
