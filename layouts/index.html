@@ -1,14 +1,28 @@
 {{ define "main" }}
-<div class="banner-wrapper">
-	<header id="banner">
-		<img class="in-flight" src="/me.jpg" alt="Profilbild">
-		<h1 class="in-flight">Jan Syring-Lingenfelder</h1>
-		<h2 class="in-flight">powering computers since 1996</h2>
-	</header>
-	<i class="fa fa-chevron-circle-down in-flight"></i>
-</div>
+<section class="hero is-primary is-bold is-fullheight is-relative">
+	<div class="hero-head"></div>
+	<div class="hero-body">
+		<div class="container">
+			<figure class="image is-128x128 my-6">
+				<img class="is-rounded is-image in-flight" src="/me.jpg" alt="Profilbild">
+			</figure>
+			<h1 class="title is-size-1 in-flight">Jan Syring-Lingenfelder</h1>
+			<h2 class="subtitle is-size-3 in-flight">powering computers since 1996</h2>
+		</div>
+	</div>
+	<div class="hero-foot">
+		<a class="icon is-medium is-clickable" href="#über-mich">
+			<i class="fa fa-2x fa-chevron-circle-down in-flight bouncy-chevron"></i>
+		</a>
+	</div>
+</section>
 
 <main>
 	{{ .Content }}
 </main>
+
+{{ $bouncychevron := resources.Get "components/bouncy-chevron.js" }}
+{{ $bodyscripts := slice $bouncychevron | resources.Concat "bundle.index.js" | resources.Minify | fingerprint }}
+<script defer src="{{ $bodyscripts.Permalink }}"></script>
+
 {{ end }}
