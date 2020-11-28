@@ -1,0 +1,8 @@
+{{ $bg := $.Page.Resources.GetMatch (.Get "background") }}
+<div class="hero is-primary is-medium parallax" {{ with $bg }}style="background-image: url({{ .RelPermalink }})"{{ end }}>
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title is-1 has-text-centered is-uppercase">{{ .Get "title" }}</h1>
+        </div>
+    </div>
+</div>
