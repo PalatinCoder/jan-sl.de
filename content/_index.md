@@ -27,9 +27,18 @@ Ein Leben außerhalb der IT habe ich übrigens auch, dort wohne ich im Weindorf 
 # Showcase
 {{< /parallax-header >}}
 
-{{< section >}}
+{{< columns >}}
+{{< column >}}
 Das Basteln von Webseiten war mein Einstieg in die IT-Welt.
 Das Interesse daran hat mein [Vater](https://www.g-sl.de) geweckt, der sich auch damit beschäftigt und dem ich anfangs viel über die Schulter geschaut habe.
 Angefangen mit dem Ausprobieren in WYSIWYG Editoren und "rumfuhrwerken" im Code den sie generieren, habe ich mein Wissen in den üblichen Webtechnologien stetig weiterentwickelt und mittlerweile doch recht gut gefestigt.
+
 Und wie das halt so ist, wenn man etwas gut kann, dann darf man das auch für andere Leute anwenden :wink:
-{{< /section >}}
+{{< /column >}}
+
+{{< column >}}
+Wenn Webseiten der Einstieg waren, waren (Windows-) Programme die nächsten Schritte hin zum "richtigen" Programmieren in verschiedenen Sprachen. Entwickelt habe ich dabei gerne das, was ich gerade selbst gebraucht habe - kleine Shellskripte für den Alltag, eine CTI Anwendung, alles mögliche eben. Das ganze auch in diversen Sprachen, je nach dem welche für ein konkretes Projekt eben sinnvoll ist.
+
+Manchmal kommt aber auch etwas wirklich sinnvolles dabei raus :laughing:
+{{< /column >}}
+{{< /columns >}}
