@@ -1,0 +1,3 @@
+<div class="column {{ .Get "class" }}">
+    {{ with .Inner }}{{ $.Page.RenderString . }}{{ end }}
+</div>
