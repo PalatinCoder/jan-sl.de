@@ -2,10 +2,11 @@
 title: jan syring-lingenfelder .de
 ---
 
-{{< parallax-header title="Über Mich" background=wingert.jpg >}}
+{{< parallax-header background=wingert.jpg >}}
+# Über mich
+{{< /parallax-header >}}
 
 {{< columns >}}
-
 {{< column >}}
 Naja, nicht ganz seit 1996, denn da kam ich gerade erst auf die Welt.
 Sagen wir seit Anfang der 2000er, da war ich im Grundschulalter und begann mich für alles zu interessieren, was mit Computern zu tun hat.
@@ -19,11 +20,12 @@ Aus Spaß an der Freude (und am Programmieren) habe ich diese Webseite, nutzen m
 
 Ein Leben außerhalb der IT habe ich übrigens auch, dort wohne ich im Weindorf [Duttweiler](https://www.duttweiler.de/), halte mich über Sommer gerne im dortigen [Schwimmbad](https://www.schwimmbad-duttweiler.de/) auf und spiele auch hin und wieder mal [Tischtennis](https://www.vfl-duttweiler.de/vfl-tt.htm).
 {{< /column >}}
-
 {{< /columns >}}
 
 
-{{< parallax-header title="Webdesign" background=code.jpg >}}
+{{< parallax-header background=code.jpg >}}
+# Showcase
+{{< /parallax-header >}}
 
 {{< section >}}
 Das Basteln von Webseiten war mein Einstieg in die IT-Welt.
