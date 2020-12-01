@@ -1,6 +1,8 @@
 $primary: rgb(53,56,73)
 $family-serif: "Merriweather", "Georgia", serif;
 
+$card-background-color: $primary
+
 $widescreen-enabled: true
 $fullhd-enabled: false
 
@@ -13,3 +15,14 @@ $fullhd-enabled: false
 p
   text-align: justify
   font-family: $family-serif
+
+.masonry
+  +tablet
+    height: 2700px
+  +desktop
+    height: 2350px
+  div
+    &:nth-child(odd)
+      order: 1
+    &:nth-child(even)
+      order: 2

@@ -1,0 +1,22 @@
+<div class="{{ with .Get "class" }}{{ . }}{{ end }}">
+    <div class="card">
+        <div class="card-image">
+            <figure class="image is-16by9">
+                {{ $img := .Get "img" }}
+                <img src="{{ if $img }}{{ $img }}{{ else }}/placeholder-screenshot.jpg{{ end }}" alt="Screenshot">
+            </figure>
+        </div>
+        <div class="card-content content has-text-white">
+            {{ with .Inner }}{{ $.Page.RenderString . }}{{ end }}
+        </div>
+        {{ with .Get "ctaurl" }}
+        <div class="card-footer">
+            <a class="card-footer-item button is-primary" href="{{ . }}" rel="noopener" target="_blank">
+                <span class="icon"><i class="fa fa-angle-right"></i></span>
+                <span>{{ if ($.Get "ctatext") }}{{ $.Get "ctatext" }}{{ else }}Ansehen{{ end }}</span>
+            </a>
+        </div>
+        {{ end }}
+    </div>
+</div>
+
