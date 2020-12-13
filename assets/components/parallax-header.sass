@@ -1,3 +1,8 @@
 .parallax
   text-shadow: 0 0 10px black
-  background: center/cover no-repeat fixed
+  background: center/cover no-repeat scroll
+  /* no actual parallax on mobiles
+     Sarafi on iPhone won't display the fixed background right,
+     so I set it to scroll and only on tablet upwards it will be fixed */
+  +tablet
+    background-attachment: fixed
