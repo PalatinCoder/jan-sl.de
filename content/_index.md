@@ -1,5 +1,6 @@
 ---
-title: jan syring-lingenfelder .de
+title: "jan syring-lingenfelder .de"
+description: "powering computers since 1996"
 ---
 
 {{< parallax-header background=wingert.jpg >}}
