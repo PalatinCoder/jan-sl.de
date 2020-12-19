@@ -1,4 +1,4 @@
-{{ define "main" }}
+{{ define "header" }}
 <section class="hero is-primary is-bold is-fullheight is-relative">
 	<div class="hero-head"></div>
 	<div class="hero-body">
@@ -16,10 +16,10 @@
 		</span>
 	</div>
 </section>
+{{ end }}
 
-<main>
-	{{ .Content }}
-</main>
+{{ define "main" }}
+{{ .Content }}
 
 {{ $bouncychevron := resources.Get "components/bouncy-chevron.js" }}
 {{ $bodyscripts := slice $bouncychevron | resources.Concat "bundle.index.js" | resources.Minify | fingerprint }}
