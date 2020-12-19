@@ -1,0 +1,24 @@
+{{ define "header" }}
+{{- partial "hero-with-navbar.html" . -}}
+{{ end }}
+
+{{ define "main" }}
+<section class="section">
+    <div class="container">
+        <div class="content">
+            {{ .Content }}
+        </div>
+        <hr>
+        <nav>
+            {{ range .Pages }}
+            {{ partial "post-summary.html" . }}
+            {{ end }}
+        </nav>
+    </div>
+</section>
+
+{{ $navbar := resources.Get "components/navbar.js" }}
+{{ $bodyscripts := slice $navbar | resources.Concat "bundle.page.js" | resources.Minify | fingerprint }}
+<script defer src="{{ $bodyscripts.Permalink }}"></script>
+
+{{ end }}

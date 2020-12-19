@@ -1,0 +1,16 @@
+<article class="media">
+    <div class="media-content">
+        <a class="title is-4 heading" href="{{ .Permalink }}">{{ .Title }}</a>
+        <div class="subtitle is-6">
+            {{ with $.Site.GetPage "section" .Section }}{{ .Title }}{{ end }}
+            <small>
+                &nbsp;|&nbsp;
+                <i class="fa fa-calendar"></i>&nbsp;<time>{{ .PublishDate.Format "02.01.2006" }}</time>&nbsp;
+                <i class="fa fa-clock-o"></i>&nbsp;{{ .ReadingTime }}min read
+            </small>
+        </div>
+        <p class="content">
+            {{ with .Description }}{{ . }}{{ else }}{{ .Summary }}{{ end }}
+        </p>
+    </div>
+</article>
