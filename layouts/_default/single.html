@@ -1,0 +1,34 @@
+{{ define "header" }}
+{{- partial "hero-with-navbar.html" . -}}
+{{ end }}
+
+{{ define "main" }}
+<section class="section">
+    <div class="container">
+        <article class="content">
+            {{ .Content }}
+        </article>
+    </div>
+</section>
+<section class="section">
+    <div class="container">
+        <div class="columns is-mobile">
+            <div class="column has-text-left">
+                {{ with .PrevInSection }}
+                <a href="{{ .Permalink }}"><i class="fa fa-angle-double-left"></i>&nbsp;{{ .Title }}</a>
+                {{ end }}
+            </div>
+            <div class="column has-text-right">
+                {{ with .NextInSection }}
+                <a href="{{ .Permalink }}">{{ .Title }}&nbsp;<i class="fa fa-angle-double-right"></i></a>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</section>
+
+{{ $navbar := resources.Get "components/navbar.js" }}
+{{ $bodyscripts := slice $navbar | resources.Concat "bundle.page.js" | resources.Minify | fingerprint }}
+<script defer src="{{ $bodyscripts.Permalink }}"></script>
+
+{{ end }}

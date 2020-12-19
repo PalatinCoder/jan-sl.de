@@ -1,0 +1,34 @@
+<section class="hero is-primary is-bold is-medium">
+    <div class="hero-head">
+        <nav class="navbar is-transparent">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="/">{{ .Site.Title }}</a>
+                    <a class="navbar-burger" role="button" aria-label="menu" aria-expanded="false" data-target="mainmenu">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+                <div id="mainmenu" class="navbar-menu">
+                    <div class="navbar-end">
+                        {{ range .Site.Menus.main }}
+                        <a class="navbar-item" href="{{ .URL }}">{{ .Name }}</a>
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title is-1 heading">{{ .Title }}</h1>
+            {{ if not .IsSection }}
+            <div class="subtitle is-6">
+                <i class="fa fa-calendar"></i>&nbsp;<time>{{ .PublishDate.Format "02.01.2006" }}</time>&nbsp;
+                <i class="fa fa-clock-o"></i>&nbsp;{{ .ReadingTime }}min read
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
