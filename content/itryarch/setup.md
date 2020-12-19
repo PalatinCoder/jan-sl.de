@@ -66,7 +66,7 @@ So far, only installed `pulseaudio` - just worked. 🎉
 As I already wrote in [VM Shenanigans][vm-shenanigans] I chose sway as my window manager.
 The installation itself was pretty straight forward, basic configuration included setting the output positions (as I use two monitors), some keybindings and I was good to go.
 
-You can find the full configuration in my [dotfiles][dotfiles], and I will dive deeper into how I set everything up (and made look nice) [here][ricing].
+You can find the full configuration in my [dotfiles][dotfiles], and I will dive deeper into how I set everything up (and made look nice) in a future post.
 
 As for logging in and starting sway, there are a couple of different options.
 Probably the most common would be using a display manager such as lightdm et al. to handle your login and start the window manager.
@@ -96,7 +96,7 @@ Initially I used the sway config file to `exec` some programs I want to automati
 [wiki:bootprocess]: https://wiki.archlinux.org/index.php/Arch_boot_process#Boot_loader
 [wiki:EFISTUB]: https://wiki.archlinux.org/index.php/EFISTUB
 [vm-shenanigans]: {{<ref "vm-shenanigans.md" >}}
-[ricing]: {{<ref "ricing.md" >}}
+[ricing]: TODO
 [dotfiles]: https://github.com/PalatinCoder/dotfiles/tree/master/sway
 [sway:5160]: https://github.com/swaywm/sway/issues/5160
 [wiki:autologin]: https://wiki.archlinux.org/index.php/getty#Automatic_login_to_virtual_console
