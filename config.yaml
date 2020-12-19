@@ -1,3 +1,11 @@
 title: "jan syring-lingenfelder .de"
 description: "Jan Syring-Lingenfelder - private Homepage - Software, Webdesign, IT"
 enableEmoji: true
+menu:
+  main:
+    - identifier: itryarch
+      name: I Try Arch (btw)
+      url: /itryarch/
+    - identifier: ot
+      name: Off Topic
+      url: /ot/

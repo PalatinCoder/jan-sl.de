@@ -18,6 +18,7 @@ Inzwischen habe ich das ganze studiert, habe einen Abschluss in Informationstech
 
 {{< column >}}
 Aus Spaß an der Freude (und am Programmieren) habe ich diese Webseite, nutzen möchte ich sie um mich und einige ausgewählte meiner Projekte vorzustellen.
+Hin und wieder beschäftige ich mich auch mit Dingen, die ich als wirklich erzählenswert erachte. Und manchmal schreibe ich dann sogar ein paar [Worte](#blog) darüber.
 
 Ein Leben außerhalb der IT habe ich übrigens auch, dort wohne ich im Weindorf [Duttweiler](https://www.duttweiler.de/), halte mich über Sommer gerne im dortigen [Schwimmbad](https://www.schwimmbad-duttweiler.de/) auf und spiele auch hin und wieder mal [Tischtennis](https://www.vfl-duttweiler.de/vfl-tt.htm).
 {{< /column >}}
@@ -107,4 +108,18 @@ Nach einigem hin und her wurde die App dann akzeptiert und konnte von jedem genu
 Inzwischen hat sich bei Google einiges geändert, woran ich die App hätte anpassen müssen, und da ich das Studium ja auch beendet habe, habe ich die Pflege der App eingestellt und das Backend abgeschaltet.
 Der Code ist aber noch verfügbar, das Repository ist bei [GitHub](https://github.com/PalatinCoder/DHBWRapla-action) archiviert.
 {{< /card >}}
+{{< /columns >}}
+
+{{< parallax-header background=code-2.jpg >}}
+# Blog
+{{< /parallax-header >}}
+
+{{< columns >}}
+{{< column >}}
+Mein Blog war ursprünglich aus der Idee entstanden, über meine Abenteuer mit Arch Linux zu berichten, darum geht es auch hauptsächlich.
+Vielleicht kommen aber weitere Themen dazu? Wer weiß.
+
+Achtung! Ab jetzt wird's Englisch. Warum ich auf Englisch blogge? Keine Ahnung. Ist gerade so geworden.:man-shrugging:
+{{< /column >}}
+{{< blogsections >}}
 {{< /columns >}}

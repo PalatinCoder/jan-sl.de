@@ -1,0 +1,12 @@
+<div class="column">
+    <aside class="menu">
+        <p class="menu-label">Sections</p>
+        <ul class="menu-list">
+        {{ range .Site.Menus.main }}
+        <li>
+            <a href="{{ .URL }}">{{ .Name }}</a>
+        </li>
+        {{ end }}
+        </ul>
+    </aside>
+</div>
