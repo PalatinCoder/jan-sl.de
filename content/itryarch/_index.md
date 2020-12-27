@@ -1,5 +1,6 @@
 ---
 title: "I Try Arch (btw)"
+description: "On a rainy sunday afternoon I felt the sudden urge to ditch Windows as my desktop OS and replace it with some Linux distro. Read about my adventures here."
 ---
 
 On a rainy sunday afternoon I felt the sudden urge to ditch Windows as my desktop OS and replace it with some Linux distro.

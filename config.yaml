@@ -1,6 +1,7 @@
-title: "jan syring-lingenfelder .de"
-description: "Jan Syring-Lingenfelder - private Homepage - Software, Webdesign, IT"
 enableEmoji: true
+params:
+  title: "jan syring-lingenfelder .de"
+  description: "Jan Syring-Lingenfelder - private Homepage - Software, Webdesign, IT"
 menu:
   main:
     - identifier: itryarch

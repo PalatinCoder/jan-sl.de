@@ -7,7 +7,9 @@
     {{ $css := resources.Get "root.sass" | resources.ToCSS (dict "outputStyle" "compressed") | fingerprint }}
     <link rel="stylesheet" href="{{ $css.Permalink }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
-    {{ $title := print .Title " | " .Site.Title }}
+    {{ $title := print .Title " | " .Site.Params.Title }}
     {{ if .IsHome }}{{ $title = .Title }}{{ end }}
     <title>{{ $title }}</title>
+    {{ template "_internal/twitter_cards.html" . }}
+    {{ template "_internal/opengraph.html" . }}
 </head>
