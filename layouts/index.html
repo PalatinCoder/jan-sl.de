@@ -24,7 +24,7 @@
 <div class="section">
     <div class="container">
         <h4 class="title is-5">Recent Posts</h4>
-        {{ range (.Site.RegularPages.ByLastmod | first 3) }}
+        {{ range (.Site.RegularPages.ByLastmod.Reverse | first 3) }}
         {{ partial "post-summary.html" . }}
         {{ end }}
     </div>
