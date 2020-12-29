@@ -1,4 +1,5 @@
 enableEmoji: true
+enableGitInfo: true
 params:
   title: "jan syring-lingenfelder .de"
   description: "Jan Syring-Lingenfelder - private Homepage - Software, Webdesign, IT"
