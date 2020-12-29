@@ -16,6 +16,10 @@ p
   text-align: justify
   font-family: $family-serif
 
+// previous rule overrides the alignment in figures set by bulma, thus catch that again...
+.content figure p
+      text-align: center
+
 .masonry
   +tablet
     height: 2700px
