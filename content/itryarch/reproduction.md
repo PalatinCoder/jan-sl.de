@@ -15,7 +15,7 @@ I have a lot of things planned with Ansible covering my homelab and public servi
 For the beginning, I chose my workstation to be the first system I manage with ansible.
 As I transition with my Arch workstation from a VM to bare metal, I'm looking for an easy way to basically replicate the VM, and manage the workstation's configuration in the future.
 With Ansible, my overall goal is to boot the archiso, partition the disk, `pacstrap` it with Ansible, run the playbook and end up with a fully provisioned workstation.
-So in this post I'll find out what makes my current setup my current setup. 
+So in this post I'll find out what makes my current setup my current setup.
 
 ## What have I done?
 
@@ -78,7 +78,7 @@ That however doesn't work too well, since one does most of the changes in `/etc`
 
 So I need a different strategy.
 Luckily, pacman can help us out here.
-Querying for installed packages with `pacman -Qii` will give us detailed information about every package, including it's files and their state.
+Querying for installed packages with `pacman -Qii` will give us detailed information about every package, including its files and their state.
 To get a nice list out of that, we can do some `awk` filtering:
 ```sh
 $ pacman -Qii | awk '/^MODIFIED/ {print $2}' > modified.txt
