@@ -244,7 +244,7 @@ I wrote a segment myself to display the currently selected docker context, so I 
 To display it, the custom segment reads `~/.docker/config.json` with `jq`.
 On the new system however, that file wasn't there yet, as I hadn't used docker yet (obviously), so the `jq` command failed breaking the whole prompt. D'ouh!
 Honestly, I did for real put a task in the playbook to create a dummy config file so it could be read by the prompt function.
-But before even running it I realized how stupid that is and how much easier a `[ -f ~/.docker/config.json] || return` in the prompt function would be. :joy:
+But before even running it I realized how stupid that is and how much easier a `[ -f ~/.docker/config.json ] || return` in the prompt function would be. :joy:
 
 In the end, my whole arch installation roughly looks like this, with the playbook files sitting on an nfs share:
 
