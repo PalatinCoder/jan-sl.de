@@ -281,6 +281,38 @@ For that, my approach is to be disciplined and do config changes only via the pl
 But anyway - Next up: Dual boot!
 
 
+# Updates:
+
+Since writing this post I did further develop my playbook, so here are some useful updates:
+
+### The Base
+
+In the base setup, I changed the commands to generate the locales and to sync the clock so they don't run every time, but only if needed. This is how it looks now:
+```yaml
+- name: base set up | locale.gen de_DE
+  tags: locale
+  lineinfile:
+    path: /etc/locale.gen
+    line: "de_DE.UTF-8 UTF-8"
+    regexp: "de_DE\\.UTF-8"
+  # UPDATE: Notify a handler to generate the locales only if the locale.gen file was changed
+  notify:
+    - Generate locales
+#(...)
+- name: base set up | create time adjustment
+  command:
+    cmd: hwclock --systohc
+    # UPDATE: The creates parameter tells ansible what the command does, so it's not executed when the file already exists
+    creates: /etc/adjtime
+```
+```yaml
+# roles/workstation/handlers/main.yml
+# Handler to regenerate locales
+- name: Generate locales
+  command: locale-gen
+```
+
+
 [part-1]: {{<ref "itryarch/reproduction.md" >}}
 [dotfiles]: {{<ref "itryarch/dotfiles.md#update" >}}
 [kewlfft-aur]: https://github.com/kewlfft/ansible-aur
