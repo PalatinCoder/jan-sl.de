@@ -1,7 +1,6 @@
 ---
 title: "The Real Deal"
 date: 2021-03-07T19:55:47+01:00
-draft: true
 ---
 
 Enough playing around, let's install on real hardware! :muscle:
