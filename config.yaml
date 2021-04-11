@@ -13,6 +13,12 @@ menu:
     - identifier: itryarch
       name: I Try Arch (btw)
       url: /itryarch/
+      weight: 1
+    - identifier: selfhost
+      name: Self Hosting
+      url: /selfhost/
+      weight: 1
     - identifier: ot
       name: Off Topic
       url: /ot/
+      weight: 0
