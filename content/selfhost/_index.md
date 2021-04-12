@@ -12,5 +12,10 @@ It lives inside an Inter-Tech 2U-2404S which is a 2U 19" format case that I put 
 
 On the server, I run some useful services for me, but I'm also hosting some public facing services on some VPSes.
 The posts in this section will be mostly about how I setup my infrastructure in my (home)lab to run these services.
+
+I'm running ~~FreeNAS~~ TrueNAS on the bare metal and some Linux VMs on top of that.
+I tought it'd be wise to give TrueNAS direct access to the disks, however over time this decision showed some drawbacks:
+Running `bhyve` of all hypervisors turned out to be not the most common and thus documented and battle-tested option :sweat_smile:
+But there are no problems, only challenges :muscle:
 { .is-clearfix }
 
