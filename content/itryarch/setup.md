@@ -91,6 +91,13 @@ This is recommended as per the [sway wiki][sway:systemd-integration].
 
 Initially I used the sway config file to `exec` some programs I want to automatically start with sway and have them running in the background, such as `waybar`, `swayidle` and `keepassxc`. However, I'll be moving this to systemd user services connected with a `sway-session.target`, as described in the [sway wiki][sway:systemd-integration], as I think it's the cleaner solution. I'll update this post, stay tuned!
 
+**Update**: I successfully removed all the `exec`s from sway's config and run them as systemd user services, either with their own [service files][dots:user-services], or by linking their `.desktop` files into `$XDG_CONFIG_HOME/autostart`.
+This setup runs smoothly now.
+However one thing to keep in mind is that user services don't run inside your actual session (that's exactly why the sway devs think sway shouldn't be run as user service).
+In my case that's no problem for the background services.
+The only issue I ran into was `swayidle` not being able to discover what session it runs in, however that's already fixed upstream but just not released yet. Installing the AUR version helps for the moment :wink:
+
+
 [arch_guide]: https://wiki.archlinux.org/index.php/Installation_guide
 [systemd_partitions]: https://systemd.io/DISCOVERABLE_PARTITIONS/
 [wiki:bootprocess]: https://wiki.archlinux.org/index.php/Arch_boot_process#Boot_loader
@@ -101,3 +108,4 @@ Initially I used the sway config file to `exec` some programs I want to automati
 [sway:5160]: https://github.com/swaywm/sway/issues/5160
 [wiki:autologin]: https://wiki.archlinux.org/index.php/getty#Automatic_login_to_virtual_console
 [sway:systemd-integration]: https://github.com/swaywm/sway/wiki/Systemd-integration
+[dots:user-services]: https://github.com/PalatinCoder/dotfiles/tree/master/systemd/user
