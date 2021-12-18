@@ -58,6 +58,11 @@ I'm a fan of using systemd's `environment.d`, but that only is applied to system
 
 For the time being, I stuck to using the `.zshenv` file to set `$ZDOTDIR` so `.zshrc` get's picked up, and then set everything else from there.
 
+### Update to the update {#update2}
+
+While refactoring my [session startup][session-startup], I needed a different solution to this, since, using a display manager, the window manager was no longer started through the shell.
+Due to that, I moved everything from `.zshrc` into `environment.d` and use the [systemd-environment-d-generator(8)](https://www.freedesktop.org/software/systemd/man/systemd-environment-d-generator.html) to import them into the shell and the window manager session.
+
 
 [configuration management]: {{<ref "itryarch/reproduction.md" >}}
 [wiki-xdgbasedir]: https://wiki.archlinux.org/index.php/XDG_Base_Directory
@@ -70,3 +75,4 @@ For the time being, I stuck to using the `.zshenv` file to set `$ZDOTDIR` so `.z
 [ansible-2]: https://github.com/ansible/ansible/issues/68587
 [pam-env]: https://github.com/linux-pam/linux-pam/commit/ecd526743a27157c5210b0ce9867c43a2fa27784
 [systemd#7641]: https://github.com/systemd/systemd/issues/7641
+[session-startup]: {{< ref "itryarch/session-startup.md" >}}

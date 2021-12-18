@@ -86,9 +86,9 @@ Instead, I'd rather have the command executed automatically when there is a seco
 
 As it turns out, `udev` can indeed trigger systemd units when devices are added or removed.
 So first, let's define a simple systemd service to remap consoles 1 and 2 (in case I need a console to recover a broken desktop or something)
-```
+```service
 [Unit]
-Description=Remap virtual terminal 1 to framebuffer 1
+Description=Remap virtual terminals 1 and 2 to framebuffer 1
 
 [Service]
 Type=oneshot
@@ -104,7 +104,58 @@ What this does is basically, whenn a second framebuffer gets added to the system
 
 By the way I changed some kernel parameters according to the [wiki][wiki#silent] to achieve a silent boot, now directly into my greeter and also on my main display. Awesome! :tada:
 
+**Small update**: After using this for a couple of days, I noticed that some kind of "hot plug" support would be nice, so I added `ExecStop` directives to reset the mapping to fb0 and `StopWhenUnneeded=yes` to the `[Unit]` section.
+This should, in theory, execute the stop commands when the framebuffer device is unplugged (since the udev rule established a dependency from the device to the service, the service is no longer needed when the devices isn't there anymore).
+But only in theory, since the hotplug of the framebuffer device doesn't work at all (manually stopping the service does, however).
+I'll just leave it for the moment but might revisit another time.
 
+## Bigger update: Environment and Systemd integration
+
+To have a better integration between the session and the systemd user session, I did some changes after the initial setup.
+As I described in a [previous post][changing-env], I was looking for a single place to configure environment variables and have them available in the desktop session as well as all terminals.
+Having the window manager started from a shell session, the shell rc was that place, and during startup of the window manager a quick call to `systemctl --user import-environment` made the variables available to the user services.
+Using a display manager however, that became scattered and also I wanted to keep the startup script nice and small.
+So to achieve that single point of configuration again, I moved all the variables from the startup script and the shell rc into different \*.conf files in systemd's `environment.d`.
+Then, to have them available, the block in the startup script changed to this simple call:
+```sh
+# Import environment variables from systemd user manager
+export $(/usr/lib/systemd/user-environment-generators/30-systemd-environment-d-generator)
+```
+With the same call in the beginning of `.zshrc`, in case I run a shell without having started the desktop environment yet.
+
+Now with the environment set, the startup of the window manager(s) also needs some work.
+Fristly, to have autorun apps find the window manager the `WAYLAND_DISPLAY` variable needs to be available (which is set by the window manager), so it needs to be imported in to the systemd environment by calling `systemctl --user import-environment WAYLAND_DISPLAY` towards the end of the wm's initialization.
+
+Secondly, to have all the background services like `swaybg`, `waybar` etc. started, I created a `systemd.target` for the session which pulls in all required services, like this (e.g. for my [river][github/river-wm] session):
+```systemd
+[Unit]
+Description=river wm session
+Documentation=man:systemd.special(7)
+BindsTo=graphical-session.target
+BindsTo=river.scope
+After=river.scope
+After=graphical-session-pre.target
+Wants=graphical-session-pre.target
+Wants=xdg-desktop-autostart.target
+Wants=kanshi@river.service
+Wants=waybar@river.service
+Wants=swaybg.service
+Wants=swayidle@river.service
+```
+There are a few things to discuss here:
+On the one hand, notice how some of the services are *instanciated services* (e.g. `kanshi@river.service`).
+This allows me to have the same service start with different config files for different wm sessions (e.g. `kanshi@sway.service`).
+On the other hand, notice the `BindsTo=river.scope` directive.
+I changed the invocation in the startup script to use `systemd-run(1)` to create a transient systemd unit.
+This way, the user service manager can track the window manager and the target can be stopped when I exit the wm. This allows for a clean stop of the session.
+The whole invocation in the startup script now looks like this:
+```sh
+exec systemd-cat --identifier="$1" systemd-run --user --scope --unit="$1" "$1"
+```
+
+Finally, I have to startup the `*-session.target` when the window manager starts to have systemd fire up all the services.
+This is done for example by a simple `systemctl --user start river-session.target` in the init script.
+In a perfect ~world~window manager, I would have an exit hook to call `systemctl --user stop river-session.target` to have a perfectly ordered shutdown, but the dependency between the `target` and the `scope` is sufficient.
 
 [greetd]: https://git.sr.ht/~kennylevinsen/greetd
 [tuigreet]: https://github.com/apognu/tuigreet
@@ -114,3 +165,5 @@ By the way I changed some kernel parameters according to the [wiki][wiki#silent]
 [aur#con2fbmap]: https://aur.archlinux.org/packages/con2fbmap/
 [linux#systemd+udev]: https://www.linux.com/training-tutorials/systemd-services-reacting-change/
 [wiki#silent]: https://wiki.archlinux.org/title/Silent_boot
+[changing-env]: {{< ref "itryarch/dotfiles.md#update" >}}
+[github/river-wm]: https://github.com/riverwm/river

@@ -97,6 +97,8 @@ However one thing to keep in mind is that user services don't run inside your ac
 In my case that's no problem for the background services.
 The only issue I ran into was `swayidle` not being able to discover what session it runs in, however that's already fixed upstream but just not released yet. Installing the AUR version helps for the moment :wink:
 
+**Update Nr 2**: In the meantime, I refactored the [session startup][session-startup] quite a bit :laughing:
+
 
 [arch_guide]: https://wiki.archlinux.org/index.php/Installation_guide
 [systemd_partitions]: https://systemd.io/DISCOVERABLE_PARTITIONS/
@@ -109,3 +111,4 @@ The only issue I ran into was `swayidle` not being able to discover what session
 [wiki:autologin]: https://wiki.archlinux.org/index.php/getty#Automatic_login_to_virtual_console
 [sway:systemd-integration]: https://github.com/swaywm/sway/wiki/Systemd-integration
 [dots:user-services]: https://github.com/PalatinCoder/dotfiles/tree/master/systemd/user
+[session-startup]: {{< ref "itryarch/session-startup.md" >}}
