@@ -17,5 +17,8 @@ I'm running ~~FreeNAS~~ TrueNAS on the bare metal and some Linux VMs on top of t
 I tought it'd be wise to give TrueNAS direct access to the disks, however over time this decision showed some drawbacks:
 Running `bhyve` of all hypervisors turned out to be not the most common and thus documented and battle-tested option :sweat_smile:
 But there are no problems, only challenges :muscle:
+
+Or so I thought.
+Over time, I had enough challenges and decided to [turn it inside out]({{< ref "selfhost/inside-out.md" >}}) :laughing:
 { .is-clearfix }
 
