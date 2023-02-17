@@ -61,10 +61,15 @@ resource "cloudflare_pages_project" "jan-sl" {
   }
 }
 
-resource "cloudflare_pages_domain" "jan-sl" {
+resource "cloudflare_pages_domain" "about_jan-sl_tech" {
   account_id   = var.account_id
   project_name = var.project_name
   domain       = "about.jan-sl.tech"
+}
+resource "cloudflare_pages_domain" "www_jan-sl_de" {
+  account_id   = var.account_id
+  project_name = var.project_name
+  domain       = "www.jan-sl.de"
 }
 
 resource "cloudflare_record" "about-jan-sl-tech" {
