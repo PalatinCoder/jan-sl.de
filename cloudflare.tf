@@ -78,3 +78,39 @@ resource "cloudflare_record" "about-jan-sl-tech" {
   value       = "${var.project_name}.pages.dev"
   type        = "CNAME"
 }
+resource "cloudflare_record" "www_jan-sl_tech" {
+  zone_id     = "1375bf40d92ecc1cc79ae54378f4d2ad"
+  name        = "www"
+  type        = "CNAME"
+  value       = "about.jan-sl.tech"
+  proxied     = true
+}
+resource "cloudflare_record" "jan-sl_tech" {
+  zone_id     = "1375bf40d92ecc1cc79ae54378f4d2ad"
+  name        = "jan-sl.tech"
+  type        = "CNAME"
+  value       = "about.jan-sl.tech"
+  proxied     = true
+}
+resource "cloudflare_ruleset" "jan-sl_tech_canonical_url" {
+  zone_id     = "1375bf40d92ecc1cc79ae54378f4d2ad"
+  name        = "personal homepage redirects"
+  kind        = "zone"
+  phase       = "http_request_dynamic_redirect"
+
+  rules {
+    action = "redirect"
+    action_parameters {
+      from_value {
+        status_code = 301
+        target_url {
+          value = "https://about.jan-sl.tech"
+        }
+        preserve_query_string = false
+      }
+    }
+    expression  = "(http.host eq \"jan-sl.tech\") or (http.host eq \"www.jan-sl.tech\")"
+    description = "Redirect anyone on the root domains to the canonical URL of the personal homepage"
+    enabled     = true
+  }
+}
